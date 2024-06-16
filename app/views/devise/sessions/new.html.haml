@@ -1,0 +1,15 @@
+.form-background
+.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email, class: 'form-text'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text'
+    .field
+      = f.label :password, class: 'form-text'
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: 'text'
+    .form-right
+      = render "devise/shared/links"
+    .actions
+      = f.submit "LOGIN", class: 'btn-primary'

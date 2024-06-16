@@ -1,0 +1,18 @@
+.form-background
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :account, class: 'form-text'
+      %br/
+      = f.text_field :account, autocomplete: "account", class: 'text'
+    .field
+      = f.label :email, class: 'form-text'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text'
+    .field
+      = f.label :password, class: 'form-text'
+      %br/
+      = f.password_field :password, autocomplete: "new-password", class: 'text'
+    .actions
+      = f.submit "CREATE ACCOUNT", class: 'btn-primary'

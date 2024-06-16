@@ -1,0 +1,19 @@
+$layout-width-inner: 1200px;
+
+$primary-color: #FFE600;
+$secondary-color: #979797;
+
+$breakpoints: (
+//キー : 値
+  'sp': '(max-width: 767px)',
+  'pc':  "(min-width: #{$layout-width-inner})"
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はsp
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}

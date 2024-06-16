@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header__parts {
+  display: inline-block;
+}
+.header__parts:nth-child(2) {
+  margin: 0 auto;
+  transform: translateX(-10px);
+}
+
+.header__three {
+  transform: translateX(0);
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,25 @@
+.container
+  = render 'commons/header'
+
+  .profile-avatar
+    = link_to '#', id: 'choose_avatar_button' do
+      - if current_user.profile&.avatar&.attached?
+        = image_tag  @profile.avatar
+      - else
+        = image_tag 'default-avatar'
+
+  = form_with(model: @profile, method: :post, url: profile_path, local: true) do |f|
+    .field
+      = f.file_field :avatar, id: 'avatar_upload', class: 'hidden'
+      = f.submit id: 'upload_button', class: 'hidden'
+
+  %ul.profile-count
+    %li
+      %h3 44
+      %p Posts
+    %li
+      %h3 110
+      %p Followers
+    %li
+      %h3 44
+      %p Following

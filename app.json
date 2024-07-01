@@ -3,7 +3,7 @@
   "description": "This is postapp",
   "keywords": [],
   "website": "",
-  "repository": "https://github.com/rari001/sns-app",
+  "repository": "https://github.com/rari001/snsApp",
   "env": {},
   "addons": [
     "heroku-postgresql:hobby-dev"

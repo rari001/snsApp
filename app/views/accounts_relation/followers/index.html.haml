@@ -1,0 +1,4 @@
+= render 'commons/header-2'
+.container.margin-container
+  - @user.followers.each do |follower|
+    = render 'commons/followers', user: @user, follower: follower

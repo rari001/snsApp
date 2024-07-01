@@ -1,0 +1,4 @@
+= render 'commons/header', user: @user
+= render 'commons/profile', user: @user
+- content_for :relationship_js do
+  = javascript_import_module_tag "relationship"

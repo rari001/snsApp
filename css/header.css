@@ -3,6 +3,21 @@
   justify-content: space-between;
   font-size: 16px;
   font-weight: bold;
+  padding: 10px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  opacity: 0;
+  z-index: 1;
+  border-bottom: 1px solid #eae8e8;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+}
+
+.header__arrow {
+  width: 17px;
 }
 
 .header__parts {
@@ -14,6 +29,62 @@
 }
 
 .header__three {
-  transform: translateX(0);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) !important;
+}
+
+.header-post-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.header__post-button {
+  color: #2F80ED;
+}
+
+.header__logo {
+  width: 30px;
+  height: 30px;
+}
+.header__logo a {
+  display: block;
+}
+.header__logo img {
+  width: 30px;
+}
+
+.header__btn a {
+  color: #000000;
+}
+
+.header__avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.header__avatar-img {
+  border: 1px solid #bcb9b9 !important;
+  width: 32px !important;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.header_loginBtn {
+  color: #000000;
+}
+
+.header__gray {
+  color: #908d8d;
+}
+
+.follow-btn {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.unfollow-btn {
+  cursor: pointer;
+  font-size: 14px;
 }
 /*# sourceMappingURL=header.css.map */

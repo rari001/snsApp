@@ -1,0 +1,43 @@
+.container.margin-container
+  - if current_page?(profile_path)
+    .profile-avatar
+      = link_to '#', id: 'choose_avatar_button' do
+        = image_tag user.avatar_image
+  - else
+    .profile-avatar
+      = image_tag user.avatar_image
+
+  - if user == current_user
+    = form_with(model: @profile, method: :post, url: profile_path, local: true) do |f|
+      = f.file_field :avatar, id: 'avatar_upload', class: 'hidden'
+      = f.submit id: 'upload_button', class: 'hidden'
+
+  %ul.profile-count
+    %li
+      %h3= user.articles.count
+      %p Posts
+    - if current_page?(profile_path)
+      %li
+        = link_to profile_followings_path do
+          %h3.following-count= user.followings.count
+          %p Following
+      %li
+        = link_to profile_followers_path do
+          %h3.follower-count= user.followers.count
+          %p Followers
+    - else
+      %li
+        = link_to account_followings_path(user) do
+          %h3.following-count= user.followings.count
+          %p Following
+      %li
+        = link_to account_followers_path(user) do
+          %h3.follower-count= user.followers.count
+          %p Followers
+
+  %ul.profile-post
+    - user.articles.each do |article|
+      %li
+        = link_to article_path(article) do
+          = image_tag article.images.first
+

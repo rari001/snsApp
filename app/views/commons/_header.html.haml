@@ -1,4 +1,7 @@
-.header
-  = link_to :back do
+.header#account-show{data: {user_id: user.id}}
+  = link_to root_path do
     = image_tag 'tabs', class: 'header__arrow header__parts'
-  %p.header__parts= current_user.account
+  %p.header__parts{class: ('header__three' if user != current_user)}= user.account
+  - if user != current_user
+    %p.header__parts.header__gray.unfollow-btn.hidden Unfollow
+    %p.header__parts.header__gray.follow-btn.hidden Follow

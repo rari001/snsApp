@@ -1,0 +1,12 @@
+= render 'commons/header-2'
+.container.margin-container
+  %ul.comment#article-show{data: {article_id: @article.id}}
+
+  .comment__area
+    .comment__field
+      = text_field_tag :comment_content, '', class: 'comment__field__area'
+    .comment__submit
+      = image_tag 'comment-icon', class: 'comment__submit-icon'
+
+- content_for :comment_js do
+  = javascript_import_module_tag "comment"

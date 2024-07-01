@@ -21,9 +21,17 @@ textarea {
 }
 
 .form-background {
-  background: image_url('form-background.png') no-repeat center center / cover;
   width: 100%;
   height: 375px;
+  @include mq('sp') {
+    height: 300px;
+  }
+  background: image-url('form-background') no-repeat center center / cover;
+}
+
+.form-password {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .form-text {
@@ -44,4 +52,43 @@ textarea {
   padding: 16px 0;
   font-weight: bold;
   margin-top: 90px;
+}
+
+.post {
+  &__detail {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #bcb9b9;
+  }
+
+  &__user-name {
+    margin-left: 18px;
+    line-height: 40px;
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+
+  &__image-select {
+    margin-top: 20px;
+  }
+}
+
+.validation-message {
+  margin-top: 20px;
+  li {
+    font-size: 14px;
+    color: $secondary-color;
+  }
+}
+
+img.share-icon {
+  margin-left: 10px;
 }

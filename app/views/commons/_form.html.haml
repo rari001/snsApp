@@ -1,0 +1,14 @@
+= render 'commons/header-2'
+.container.margin-container
+  %ul{class: 'validation-message'}
+    - @article.errors.full_messages.each do |msg|
+      %li= msg
+  .post
+    .post__detail
+      = image_tag current_user.avatar_image, class: 'post__avatar'
+      %p{class: 'post__user-name'}= current_user.account
+
+  = form_with(model: @article, local: true, data: { turbo: false }) do |f|
+    %div= f.text_field :content, class: 'text post__form'
+    %div= f.file_field :images, class: 'post__image-select', multiple: true
+    %div= f.submit 'POST', class: 'btn-primary'

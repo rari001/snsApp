@@ -1,0 +1,13 @@
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+/*# sourceMappingURL=sidebar.css.map */

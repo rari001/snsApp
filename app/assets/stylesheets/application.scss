@@ -2,6 +2,15 @@
 @import 'form';
 @import 'header';
 @import 'profile';
+@import 'flash';
+@import 'article';
+@import 'post-button';
+@import 'slick-custom';
+@import 'common';
+@import 'like';
+@import 'comment';
+@import 'relation';
+@import 'sidebar';
 
 html {
   word-spacing: 1px;
@@ -26,6 +35,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #000000;
 }
 h3 {
   font-size: 16px;
@@ -38,12 +48,18 @@ ul {
 }
 
 .container {
-  max-width: 750px;
+  max-width: 650px;
   margin: 30px auto;
   padding-bottom: 30px;
   @include mq('sp') {
     padding: 16px;
     margin: 0;
     width: 100%;
+  }
+}
+.margin-container {
+  margin-top: 100px;
+  @include mq('sp') {
+    margin-top: 50px;
   }
 }

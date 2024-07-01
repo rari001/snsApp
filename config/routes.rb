@@ -9,6 +9,25 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "profiles#show"
-  resource :profile, only: [:show, :create]
+  root 'articles#index'
+  resource :profile, only: [:show, :create] do
+    scope module: :profile_relation do
+      resources :followings, only: [:index]
+      resources :followers, only: [:index]
+    end
+  end
+  resources :articles do
+    resource :like, only: [:show, :create, :destroy]
+    resources :comments, only: [:index, :create]
+    resource :comment, only: [:show]
+  end
+  resources :accounts, only: [:show] do
+    resource :status, only: [:show]
+    resource :follow, only: [:create]
+    resource :unfollow, only: [:create]
+    scope module: :accounts_relation do
+      resources :followings, only: [:index]
+      resources :followers, only: [:index]
+    end
+  end
 end

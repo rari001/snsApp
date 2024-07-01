@@ -1,0 +1,77 @@
+@import './variables';
+
+.comment {
+  @include mq('sp') {
+    margin-top: 20px;
+  }
+
+  &__area {
+    position: fixed;
+    bottom: 40px;
+    right: 0;
+    z-index: 3;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    max-width: 700px;
+  }
+
+  &__field {
+    &__area {
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      border: none;
+      width: 100%;
+    }
+  }
+
+
+  &__submit {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    cursor: pointer;
+    img {
+      width: 25px;
+      height: 20px;
+    }
+  }
+
+  &__user-name {
+    font-size: 12px;
+  }
+  &__row {
+    display: flex;
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__image {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #bcb9b9;
+    }
+  }
+
+  &__content {
+    margin-left: 16px;
+  }
+
+  &__text {
+    color: $font-secondary-color;
+    font-size: 14px;
+    line-height: calc(20 / 14);
+  }
+
+  &__dropdown {
+    margin-left: auto;
+    img {
+      width: 25px;
+    }
+  }
+}

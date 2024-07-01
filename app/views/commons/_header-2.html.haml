@@ -1,0 +1,18 @@
+.header
+  = link_to :back do
+    = image_tag 'tabs', class: 'header__arrow header__parts'
+  - if current_page?(new_article_path)
+    %p.header__parts Create a new post
+  - elsif defined?(@article) && @article.persisted? && current_page?(article_comment_path(@article))
+    %p.header__parts comment
+  - elsif defined?(@user) && @user.persisted? && current_page?(account_followings_path(@user))
+    %p.header__parts Followings
+  - elsif defined?(@user) && @user.persisted? && current_page?(account_followers_path(@user))
+    %p.header__parts Followers
+  - elsif current_page?(profile_followings_path)
+    %p.header__parts Followings
+  - elsif current_page?(profile_followers_path)
+    %p.header__parts Followers
+  - else
+    %p.header__parts Details
+

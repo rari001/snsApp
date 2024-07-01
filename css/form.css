@@ -13,13 +13,23 @@ textarea {
 }
 
 .field {
-  margin-top: 1px;
+  margin-top: 10px;
 }
 
 .form-background {
-  background: image_url("form-background.png") no-repeat center center/cover;
   width: 100%;
   height: 375px;
+  background: image-url("form-background") no-repeat center center/cover;
+}
+@media (max-width: 767px) {
+  .form-background {
+    height: 300px;
+  }
+}
+
+.form-password {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .form-text {
@@ -41,5 +51,38 @@ textarea {
   padding: 16px 0;
   font-weight: bold;
   margin-top: 90px;
+}
+
+.post__detail {
+  display: flex;
+  margin-top: 20px;
+}
+.post__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #bcb9b9;
+}
+.post__user-name {
+  margin-left: 18px;
+  line-height: 40px;
+}
+.post__form {
+  margin-top: 30px;
+}
+.post__image-select {
+  margin-top: 20px;
+}
+
+.validation-message {
+  margin-top: 20px;
+}
+.validation-message li {
+  font-size: 14px;
+  color: #979797;
+}
+
+img.share-icon {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=form.css.map */

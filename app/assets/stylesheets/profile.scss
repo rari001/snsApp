@@ -1,15 +1,22 @@
+@import './variables';
 .profile-avatar {
   text-align: center;
-  margin-top: 30px;
+  @include mq('sp') {
+    margin-top: 20px;
+  }
+  margin-top: 100px;
   img {
     width: 84px;
     height: 84px;
     border-radius: 100%;
-    border: 1px solid #E91E63;
+    border: 1px solid #bcb9b9;
     padding: 3px;
     background: #fff;
-    cursor: pointer;
   }
+}
+
+.profile-cursor {
+  cursor: pointer;
 }
 
 .profile-count {
@@ -31,4 +38,37 @@
 
 .hidden {
   display: none;
+}
+
+.profile-post {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  @include mq('sp') {
+    margin-top: 30px;
+  }
+
+  li {
+    width: calc(33.333% - 20px * 2 / 3);
+    @include mq('sp') {
+      width: calc(33.333% - 5px * 2 / 3);
+    }
+    &:not(:nth-child(3n + 1)) {
+      margin-left: 20px;
+      @include mq('sp') {
+        margin-left: 5px;
+      }
+    }
+    &:nth-child(n + 4) {
+      margin-top: 15px;
+      @include mq('sp') {
+        margin-top: 0px;
+      }
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
 }

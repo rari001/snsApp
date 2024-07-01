@@ -1,0 +1,15 @@
+.relation-list {
+  margin-top: 20px;
+}
+.relation-list li {
+  display: flex;
+}
+.relation-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.relation-list__detail {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=relation.css.map */

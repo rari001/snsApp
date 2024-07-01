@@ -1,0 +1,34 @@
+= render 'commons/header-2'
+.container.margin-container
+  .article{data: {article_id: @article.id}}
+    .article__row-detail
+      %object.article__detail
+        = link_to account_path(@article.user) do
+          = image_tag @article.user.avatar_image, class: 'article__avatar'
+        .article__info
+          %p{class: 'article__user'}= @article.user.account
+          %p{class: 'article__time'}= time_ago_in_words(@article.created_at) + ' ago'
+      - if user_signed_in? && current_user.has_written?(@article)
+        .article_detail_actions
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropbtn'
+            %object.dropdown-content.mini
+              = link_to 'edit', edit_article_path(@article)
+              = link_to 'destroy', article_path(@article), data: {turbo_method: 'delete', turbo_confirm: '本当に削除しちゃっていいの？😱'}
+    .article__image.slick-slider
+      - @article.images.each do |image|
+        .article-img-show
+          = image_tag image
+    - if user_signed_in?
+      .article__about
+        .article-heart.inactive-heart.hidden
+          = image_tag 'inactive-heart'
+        .article-heart.active-heart.hidden
+          = image_tag 'active-heart'
+        = link_to article_comment_path(@article) do
+          = image_tag 'comment-icon', class: 'comment-icon'
+        = link_to "https://twitter.com/share?text=#{@article.content}&url=#{article_url(@article)}", target: "_blank" do
+          = image_tag 'share', class: 'share-icon'
+        %script{ async: true, src: "https://platform.twitter.com/widgets.js", charset: "utf-8" }
+    .article__content-show
+      = @article.content
